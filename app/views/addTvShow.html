@@ -1,0 +1,23 @@
+ <div id="addTvShowContainer">
+ 	<div class="loaded_module">
+		<div class="form-group">
+			<form name="addTvShowForm">
+			<label for="tvShowName">Name</label>
+			<input type="text" class="form-control" name="tvShowName" ng-model="tvshow.name" required my-directive/>
+			<span ng-show="addTvShowForm.tvShowName.$error.charUp">Name must start with a capital letter.<br></span>
+			
+			<label for="tvShowGenre">Genre</label>
+			<select class="form-control" id="tvShowGenre" ng-model="tvshow.GenreId" required>
+				<option ng-repeat="genre in genres" value="{{genre.id}}">{{genre.name}}</option>
+			</select>
+			
+			<label for="tvShowRating">Rating</label>
+			<input type="text" class="form-control" id="tvShowRating" ng-model="tvshow.rating" required/>
+			
+            <label for="tvShowReview">Review</label>
+            <textarea class="form-control" rows="5" id="tvShowReview" ng-model="tvshow.review"></textarea>
+            </form>
+		</div>
+	</div>
+	<button type="button" class="btn btn-primary" ng-click="submitRecord()" ng-disabled="addTvShowForm.$invalid">Submit</button>
+</div>

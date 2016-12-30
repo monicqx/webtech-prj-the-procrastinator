@@ -1,0 +1,32 @@
+ <div id="editContainer">
+  <div id="deleteTvShowContainer">
+   <p class="lead">Choose a tv show you want to delete:</p>
+   <select class="form-control" id="tvShowGenre" ng-model="tvshowToDeleteId" required>
+		  <option ng-repeat="tvshow in tvshows" value="{{tvshow.id}}">{{tvshow.name}}</option>
+	  </select>
+	  <button type="button" class="btn btn-primary bg-1" ng-click="deleteRecord()">Delete</button>
+  </div>
+    
+  <div id="editTvShowContainer">
+   <p class="lead"><br>Choose a tv show you want to edit:</p>
+   <select class="form-control" id="tvShowGenre" ng-model="tvshowToEditId" required>
+		  <option ng-repeat="tvshow in tvshows" value="{{tvshow.id}}">{{tvshow.name}}</option>
+	  </select>
+	  
+	  <label for="tvShowName">Name</label>
+			<input type="text" class="form-control" id="tvShowName" ng-model="tvshowToEdit.name"/>
+			
+			<label for="tvShowGenre">Genre</label>
+			<select class="form-control" id="tvShowGenre" ng-model="tvshowToEdit.GenreId">
+				<option ng-repeat="genre in genres" value="{{genre.id}}">{{genre.name}}</option>
+			</select>
+			
+			<label for="tvShowRating">Rating</label>
+			<input type="text" class="form-control" id="tvShowRating" ng-model="tvshowToEdit.rating"/>
+			
+			<label for="tvShowReview">Review</label>
+   <textarea class="form-control" rows="5" id="tvShowReview" ng-model="tvshowToEdit.review"></textarea>
+	  
+	  <button type="button" class="btn btn-primary bg-1" ng-click="updateRecord()">Update changes</button>
+  </div>
+</div>

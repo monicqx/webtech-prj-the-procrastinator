@@ -4,8 +4,6 @@ Ce problema rezolva?
 Cine sunt utilizatorii?
   Orice persoana pasionata de seriale.
 Functionalitati
-  - profil propriu
   - rating
   - review-uri
   - recomandari in functie de genuri
-  - calendar cu datele la care apar noi episoade

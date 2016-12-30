@@ -1,0 +1,36 @@
+<div id="viewTvShowContainer">
+    <div id="viewAllTvShowsContainer">
+        <button type="button" class="btn btn-primary bg-1" ng-click="readTvShows()">View all TvShows</button>
+        <table class="table">
+            <tr>
+                <td><b>Name</b></td>
+                <td><b>Genre</b></td>
+                <td><b>Rating</b></td>
+                <td><b>Review</b></td>
+            </tr>
+            <tr ng-repeat="tvshow in tvshows">
+                <td>{{tvshow.name}}</td>
+                <td>{{tvshow.GenreId}}</td>
+                <td>{{tvshow.rating}}</td>
+                <td>{{tvshow.review}}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <br>
+    <div id="viewGenres">
+        <button type="button" class="btn btn-primary bg-1" ng-click="readGenres()">View Tv Shows grouped by genres</button>
+        <table class="table">
+            <tr>
+                <td><b>Name</b></td>
+                <td><b>Tv Shows</b></td>
+            </tr>
+            <tr ng-repeat="genre in genres">
+                <td><b>{{genre.name}}</b></td>
+                <td ng-repeat="tvshow in genre.TvShows">
+                    {{tvshow.name}} 
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
