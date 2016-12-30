@@ -21,6 +21,17 @@ router.get('/genres', function(req, res) {
     });
 });
 
+// get one genre by id
+router.get('/genres/:id', function(request,response){
+    Genre.findById(request.params.id).then(function(article){
+        if(Genre) {
+            response.status(200).send(article);
+        } else {
+            response.status(404).send();
+        }
+    });
+});
+
 // delete a genre by id
 router.delete('/genres/:id', function(req,res){
     Genre

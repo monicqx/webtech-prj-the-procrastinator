@@ -1,15 +1,20 @@
  <div id="editContainer">
   <div id="deleteTvShowContainer">
    <p class="lead">Choose a tv show you want to delete:</p>
-   <select class="form-control" id="tvShowGenre" ng-model="tvshowToDeleteId" required>
-		  <option ng-repeat="tvshow in tvshows" value="{{tvshow.id}}">{{tvshow.name}}</option>
-	  </select>
-	  <button type="button" class="btn btn-primary bg-1" ng-click="deleteRecord()">Delete</button>
+   <form name="deleteTvShowForm">
+     <select class="form-control" name="tvShowGenre" ng-model="tvshowToDeleteId" ng-change="getTvShowDetails(tvshowToDeleteId)" required>
+		    <option ng-repeat="tvshow in tvshows" value="{{tvshow.id}}">{{tvshow.name}}</option>
+	    </select>
+	  </form>
+	  <p ng-show=showParagraph ng-model="tvshowToDelete">Tv Show Name={{tvshowToDelete.name}} , Rating={{tvshowToDelete.rating}}</p>
+	  
+	  <button type="button" class="btn btn-primary bg-1" ng-click="deleteRecord()" ng-disabled="deleteTvShowForm.tvShowGenre.$error.required">Delete</button>
   </div>
     
   <div id="editTvShowContainer">
    <p class="lead"><br>Choose a tv show you want to edit:</p>
-   <select class="form-control" id="tvShowGenre" ng-model="tvshowToEditId" required>
+   <form name="editTvShowForm">
+   <select class="form-control" name="tvShowGenre" ng-model="tvshowToEditId" required>
 		  <option ng-repeat="tvshow in tvshows" value="{{tvshow.id}}">{{tvshow.name}}</option>
 	  </select>
 	  
@@ -26,7 +31,7 @@
 			
 			<label for="tvShowReview">Review</label>
    <textarea class="form-control" rows="5" id="tvShowReview" ng-model="tvshowToEdit.review"></textarea>
-	  
-	  <button type="button" class="btn btn-primary bg-1" ng-click="updateRecord()">Update changes</button>
+	  </form>
+	  <button type="button" class="btn btn-primary bg-1" ng-click="updateRecord()" ng-disabled="editTvShowForm.tvShowGenre.$error.required">Update changes</button>
   </div>
 </div>

@@ -12,5 +12,6 @@ ctl.controller('viewTvShowsController', ['$scope','$http', function($scope,$http
             $scope.genres = genresResponse.data;
         });
     }
+
     
 }]);
