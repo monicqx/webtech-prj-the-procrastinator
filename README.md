@@ -4,6 +4,6 @@ Ce problema rezolva?
 Cine sunt utilizatorii?
   Orice persoana pasionata de seriale.
 Functionalitati
+  - introducere seriale
   - rating
-  - review-uri
-  - recomandari in functie de genuri
+  - vizualizarea tuturor serialelor salvate
