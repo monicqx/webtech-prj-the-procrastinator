@@ -12,11 +12,11 @@
   </div>
     
   <div id="editTvShowContainer">
-   <p class="lead"><br>Choose a tv show you want to edit:</p>
-   <form name="editTvShowForm">
-   <select class="form-control" name="tvShowGenre" ng-model="tvshowToEditId" required>
-		  <option ng-repeat="tvshow in tvshows" value="{{tvshow.id}}">{{tvshow.name}}</option>
-	  </select>
+	<p class="lead"><br>Choose a tv show you want to edit:</p>
+		<form name="editTvShowForm">
+			<select class="form-control" name="tvShowGenre" ng-model="tvshowToEditId" required>
+		  		<option ng-repeat="tvshow in tvshows" value="{{tvshow.id}}">{{tvshow.name}}</option>
+	  		</select>
 	  
 	  <label for="tvShowName">Name</label>
 			<input type="text" class="form-control" id="tvShowName" ng-model="tvshowToEdit.name"/>

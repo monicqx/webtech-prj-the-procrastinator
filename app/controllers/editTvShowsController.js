@@ -2,6 +2,7 @@ let cl = angular.module('editTvShowsController', []);
 
 cl.controller('editTvShowsController', ['$scope','$http', function($scope,$http) {
     $scope.showParagraph=false;
+    
     $http.get('/tvshows').then(function(genresResponse) {
         $scope.tvshows = genresResponse.data;
     });
@@ -16,7 +17,7 @@ cl.controller('editTvShowsController', ['$scope','$http', function($scope,$http)
         });
     }
     
-    $scope.deleteRecord=function(ev){
+    $scope.deleteRecord=function(){
         $http.delete('/tvshows/'+$scope.tvshowToDeleteId)
         .success(function(response, status, headers, config){
              $scope.showParagraph=false;
